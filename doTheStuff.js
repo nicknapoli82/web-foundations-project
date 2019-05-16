@@ -33,7 +33,7 @@ function createCustomers() {
     const cust = document.getElementById('customers');
 
     const formatCust = (c) => {
-	return `<p>${c}</p><hr>`;
+	return `<p>${c}</p>`;
                 
     };
 

@@ -1,3 +1,50 @@
 #prizeInv {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#prizeInv div {
+    height: 100px;
+    width: 100px;
+}
+
+#prizeInv div p {
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+
+#prizeInv p {
+    color: blue;
+}
+
+#customers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#customers div {
+    border: blue solid 1px;
+    width: 150px;
+    height: 200px;
+}
+
+#customers span {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+#customers p {
+    color: blue;
+    text-align: center;
+    border-bottom: blue solid 1px;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
 }

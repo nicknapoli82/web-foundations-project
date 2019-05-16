@@ -1,3 +1,8 @@
+h1 {
+    color: blue;
+    text-align: center;
+}
+
 #prizeInv {
     display: flex;
     justify-content: space-around;
@@ -7,16 +12,29 @@
 #prizeInv div {
     height: 100px;
     width: 100px;
+    border: blue solid 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-#prizeInv div p {
+.prizeName {
+    flex-grow: 1;
     background-color: blue;
     color: white;
     text-align: center;
+    margin: 0px;
 }
 
-#prizeInv p {
-    color: blue;
+.prizeData {
+    flex-grow: 1;
+    color: white;
+    background-color: blue;
+    text-align: center;
+    border-radius: 50px;
+    margin: 0px;
+    width: 50%;
+    align-self: center;
 }
 
 #customers {
@@ -26,6 +44,7 @@
 }
 
 #customers div {
+    color: blue;
     border: blue solid 1px;
     width: 150px;
     height: 200px;
@@ -39,12 +58,7 @@
 }
 
 #customers p {
-    color: blue;
     text-align: center;
     border-bottom: blue solid 1px;
 }
 
-h1 {
-    color: blue;
-    text-align: center;
-}

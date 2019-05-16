@@ -14,20 +14,16 @@ const data = {
   }
 };
 
-function createPrizes() {
-    const prize = document.getElementById('prizeInv');
-    const generatePrizeCard = (key) => {
-	// This is the thing that will make each prize element to stuff into
-	// the DOM
-	prize.innerHTML += `<div id="${key}"><p>${key}</p><p>${data.prizes[key]}<p></div>`;
-    };
-
-    Object.keys(data.prizes).forEach((obj) => {
-	generatePrizeCard(obj);
-    });
-}
-
 createPrizes();
+createCustomers();
+document.getElementById('customers').addEventListener('click', alterPrizeAmt, false);
+
+function createPrizes() {
+    document.getElementById('prizeInv').innerHTML = Object.keys(data.prizes).map((o) => {
+	console.log(o);
+	return `<div id="${o}"><p class="prizeName">${o}</p><p class="prizeData">${data.prizes[o]}</p></div>`;
+    }).join('');
+}
 
 function createCustomers() {
     const cust = document.getElementById('customers');
@@ -56,10 +52,8 @@ function createCustomers() {
     }
 
     // Add all the customer cards to the DOM
-    cust.innerHTML += resultHTML;
+    cust.innerHTML = resultHTML;
 }
-
-createCustomers();
 
 // Lets add a click event listener to the 'customers' thing and do stuff!!!
 // Trying to do this without going totally crazy with IDs. I think I can
@@ -102,10 +96,4 @@ function alterPrizeAmt(e) {
     e.target.parentElement.innerHTML = `<button>-</button>${prize} ${data.customers[customer][prize]}<button>+</button>`;
     document.getElementById(prize).children[1].innerHTML = data.prizes[prize];
     console.log(data.prizes);
-//    document.getElementById(prize).innerText
-    // console.log(operate);
-    // console.log(sPar);
-    // console.log(cPar);
 }
-
-document.getElementById('customers').addEventListener('click', alterPrizeAmt, false);
